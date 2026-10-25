@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bocjm7hvvqre4"]
+
+[ext_resource type="PackedScene" uid="uid://c6cr6myqv1hhm" path="res://scenes/beginning_flat.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://b7xhxhoec3kau" path="res://resources/themes/pause.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://d2wxjurchc7tl" path="res://scenes/player.tscn" id="2_lnu2h"]
+
+[node name="game" type="Node2D" unique_id=974717437]
+
+[node name="player" parent="." unique_id=1055752724 instance=ExtResource("2_lnu2h")]
+position = Vector2(0, -128)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=631539333]
+
+[node name="pause" parent="player/Camera2D" unique_id=1329569446 instance=ExtResource("2_lbhrr")]
+z_index = 1
+
+[node name="beginning_flat" parent="." unique_id=224796254 instance=ExtResource("1_uwrxv")]
+position = Vector2(-104, -136)

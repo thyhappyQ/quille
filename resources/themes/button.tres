@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://5x2yob86yfw3"]
+
+[ext_resource type="FontFile" uid="uid://bonf6u212s6m" path="res://resources/ui/ZhengGeDianHei-16.ttf" id="1_eygru"]
+[ext_resource type="StyleBox" uid="uid://78vu7tkvdmpp" path="res://resources/themes/normal_button_style.tres" id="2_be5xc"]
+[ext_resource type="Texture2D" uid="uid://buiuaou48u37f" path="res://resources/ui/Preview.png" id="3_ljmfx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eygru"]
+texture = ExtResource("3_ljmfx")
+region_rect = Rect2(161.17317, 79.473946, 25.759216, 26.34835)
+modulate_color = Color(0.7162962, 0.7162962, 0.7162962, 1)
+
+[resource]
+Button/fonts/font = ExtResource("1_eygru")
+Button/styles/focus = ExtResource("2_be5xc")
+Button/styles/hover = ExtResource("2_be5xc")
+Button/styles/normal = ExtResource("2_be5xc")
+Button/styles/pressed = SubResource("StyleBoxTexture_eygru")
