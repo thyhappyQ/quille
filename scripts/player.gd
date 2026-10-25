@@ -28,10 +28,17 @@ func move()->void:
 	
 	velocity.x = dir * MOVING_SPEED
 
+func should_jump()->bool:
+	var result = not Status.get_state(Status.JUMPING) and is_on_floor()
+	if Settings.get_value("auto_jump"):
+		return Input.is_action_pressed("jump") and result
+	else:
+		return Input.is_action_just_pressed("jump") and result
+
 func jump()->void:
 	if is_on_ceiling() or is_on_floor():
 		Status.turn_off_state(Status.JUMPING)
-	if Input.is_action_just_pressed("jump") and not Status.get_state(Status.JUMPING) and is_on_floor():
+	if should_jump():
 		Status.turn_on_state(Status.JUMPING)
 		velocity.y = -JUMPING_SPEED
 		
