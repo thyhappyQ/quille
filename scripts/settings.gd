@@ -7,7 +7,9 @@ var settings: Dictionary = {}
 
 func _ready() -> void:
     load_config()
-    print("Auto-Jump:",settings.get("auto_jump"))
+
+func get_value(key:String):
+    return settings.get(key)
 
 func get_config(file_name:String)->String:
     return CONFIG_PATH + file_name
